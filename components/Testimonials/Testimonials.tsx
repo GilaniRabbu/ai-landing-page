@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import avatar1 from "@/public/avatar-1.png";
 import avatar2 from "@/public/avatar-2.png";
 import avatar3 from "@/public/avatar-3.png";
 import avatar4 from "@/public/avatar-4.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -42,11 +45,24 @@ const Testimonials = () => {
         <p className="text-lg md:text-xl text-center mt-5 tracking-tight max-w-sm mx-auto text-white/70">
           Our revolutionary AI SEO tools have transformed our clients strategies
         </p>
-        <div className="overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-          <div className="flex gap-5">
-            {testimonials.map((testimonial) => (
+        <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+          <motion.div
+            initial={{
+              translateX: "-50%",
+            }}
+            animate={{
+              translateX: "0",
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 30,
+              ease: "linear",
+            }}
+            className="flex gap-5 pr-5 flex-none"
+          >
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
-                key={testimonial.name}
+                key={`${testimonial.name}-${index}`}
                 className="border border-white/15 p-6 md:p-10 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] max-w-xs md:max-w-md flex-none"
               >
                 <div className="text-lg md:text-2xl tracking-tight">
@@ -69,7 +85,7 @@ const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
