@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Merriweather } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const merriweather = Merriweather({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ["latin"], weight: "500" });
 
 export const metadata: Metadata = {
   title: "AI Startup Landing Page",
@@ -16,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${merriweather.className} antialiased`}>
-        {children}
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
