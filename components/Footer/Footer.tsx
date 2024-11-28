@@ -46,9 +46,9 @@ const Footer = () => {
             </a>
           </nav>
           <div className="flex gap-5 lg:flex-1 lg:justify-end">
-            <XSocial className="cursor-pointer transition text-white/70 hover:text-white" />
-            <IGSocial className="cursor-pointer transition text-white/70 hover:text-white" />
-            <YTSocial className="cursor-pointer transition text-white/70 hover:text-white" />
+            <XSocial className="cursor-pointer w-7 transition text-white/70 hover:text-white" />
+            <IGSocial className="cursor-pointer w-7 transition text-white/70 hover:text-white" />
+            <YTSocial className="cursor-pointer w-7 transition text-white/70 hover:text-white" />
           </div>
         </div>
       </div>
