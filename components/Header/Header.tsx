@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import LogoIcon from "@/public/logo.svg";
 import MenuIcon from "@/public/icon-menu.svg";
+import CloseIcon from "@/public/icon-close.svg";
 import Button from "@/components/Button";
 
 const Header = () => {
@@ -54,11 +55,14 @@ const Header = () => {
       >
         <button
           onClick={toggleNav}
-          className="absolute top-4 left-6 text-white/70 transition hover:text-white"
+          className="block text-white/70 transition hover:text-white"
         >
-          x
+          <CloseIcon className="w-5" />
         </button>
-        <nav className="flex flex-col gap-6 mt-12 text-sm">
+        <div className="w-10 h-10 mt-10 rounded-lg inline-flex justify-center items-center border border-white/15">
+          <LogoIcon className="w-8 h-8 text-white" />
+        </div>
+        <nav className="flex flex-col gap-6 mt-5 text-sm">
           <a className="text-white/70 transition hover:text-white" href="#">
             Features
           </a>
